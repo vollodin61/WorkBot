@@ -29,7 +29,7 @@ volumes:
   redis_data:
 
 networks:
-  workbot_net:
+  nginx_net:
     name: nginx_net
     driver: bridge
 #    external: true
