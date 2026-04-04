@@ -119,6 +119,8 @@ class BotConfig:
         lang_code="ru",
     )
 
+    MY_CHAT_ID: int = int(env("MY_CHAT_ID"))
+
 
 #
 # class MyStates(StatesGroup):  # todo
