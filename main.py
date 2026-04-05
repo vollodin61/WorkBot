@@ -6,6 +6,7 @@ import sys
 from aiogram import Bot, Dispatcher
 from aiogram.webhook.aiohttp_server import SimpleRequestHandler, setup_application
 from aiohttp import web
+from telethon.tl.types import PeerChat
 
 from src.commands.commands import set_commands
 from src.handlers.setter_handlers import set_routers
@@ -22,10 +23,16 @@ async def start_message():
                 entity="me",
                 message="Бот MinZKH запущен"
             )
+            my_chat = await BotConfig.tele_ubot.get_entity(PeerChat(-1005275643764))
+            my_chat_2 = await BotConfig.tele_ubot.get_entity("https://t.me/+PUTUcpDu2nAyOTRi")
             info_logger(f"Юзербот отправил сообщение")
             await BotConfig.tele_ubot.send_message(
-                entity=-1005275643764,
+                entity=my_chat,
                 message="Бот MinZKH запущен"
+            )
+            await BotConfig.tele_ubot.send_message(
+                entity=my_chat_2,
+                message="Бот MinZKH запущен 2"
             )
         except Exception as e:
             error_logger(f"Юзербот не включен!! ОШИБКА!! {repr(e)}")
