@@ -8,8 +8,8 @@ services:
     env_file:
       - .env
     volumes:
-      - ./src/logs:/src/logs
-      - ./src/bot/logs:/src/bot/logs
+      - ./src/logs:/workbot/src/logs
+      - ./src/bot/logs:/workbot/src/bot/logs
 
 #  redis_:
 #    container_name: redis_
