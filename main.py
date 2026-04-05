@@ -15,16 +15,16 @@ from src.config.conf import error_logger, info_logger, BotConfig  # todo стр�
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 
 
-# async def start_message():
-#     async with BotConfig.tele_ubot:
-#         try:
-#             await BotConfig.tele_ubot.send_message(
-#                 entity="me",
-#                 message="Бот MinZKH запущен"
-#             )
-#             info_logger(f"Юзербот отправил сообщение")
-#         except Exception as e:
-#             error_logger(f"Юзербот не включен!! ОШИБКА!! {repr(e)}")
+async def start_message():
+    async with BotConfig.tele_ubot:
+        try:
+            await BotConfig.tele_ubot.send_message(
+                entity="me",
+                message="Бот MinZKH запущен"
+            )
+            info_logger(f"Юзербот отправил сообщение")
+        except Exception as e:
+            error_logger(f"Юзербот не включен!! ОШИБКА!! {repr(e)}")
 
 
 async def on_startup(bot: Bot, dp: Dispatcher = BotConfig.dp) -> None:
@@ -44,8 +44,8 @@ async def on_startup(bot: Bot, dp: Dispatcher = BotConfig.dp) -> None:
         drop_pending_updates=True
     )
     info_logger(f"Вебхуки установлены на эндпоинт {BotConfig.webhook_url}")
-    # await start_message()
-    # info_logger("Сообщение отправлено?")
+    await start_message()
+    info_logger("Сообщение отправлено?")
 
 
 def main():
