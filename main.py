@@ -32,6 +32,8 @@ async def start_message():
 
 
 async def on_startup(bot: Bot, dp: Dispatcher = BotConfig.dp) -> None:
+    await start_message()
+    info_logger("Сообщение отправлено?")
     # await set_admin_commands(bot)  ждёт, когда создам админские команды
     BotConfig.scheduler.start()
     await set_commands(bot)
@@ -48,8 +50,7 @@ async def on_startup(bot: Bot, dp: Dispatcher = BotConfig.dp) -> None:
         drop_pending_updates=True
     )
     info_logger(f"Вебхуки установлены на эндпоинт {BotConfig.webhook_url}")
-    await start_message()
-    info_logger("Сообщение отправлено?")
+
 
 
 def main():
