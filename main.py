@@ -24,8 +24,9 @@ async def start_message():
                 message="Бот MinZKH запущен"
             )
             my_chat = await BotConfig.tele_ubot.get_entity(PeerChat(-1005275643764))
+            info_logger(my_chat)
             my_chat_2 = await BotConfig.tele_ubot.get_entity("https://t.me/+PUTUcpDu2nAyOTRi")
-            info_logger(f"Юзербот отправил сообщение")
+            info_logger(my_chat_2)
             await BotConfig.tele_ubot.send_message(
                 entity=my_chat,
                 message="Бот MinZKH запущен"
