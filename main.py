@@ -19,8 +19,8 @@ sys.path.insert(1, os.path.join(sys.path[0], '..'))
 async def start_message():
     async with BotConfig.tele_ubot:
         try:
-            my_chat = await BotConfig.tele_ubot.get_entity(PeerChat(-1005275643764))
-            info_logger(my_chat)
+            # my_chat = await BotConfig.tele_ubot.get_entity(PeerChat(-1005275643764))
+            # info_logger(my_chat)
             my_chat_2 = await BotConfig.tele_ubot.get_entity("https://t.me/+PUTUcpDu2nAyOTRi")
             info_logger(my_chat_2)
             await BotConfig.tele_ubot.send_message(
@@ -28,10 +28,10 @@ async def start_message():
                 message="Бот MinZKH запущен"
             )
 
-            await BotConfig.tele_ubot.send_message(
-                entity=my_chat,
-                message="Бот MinZKH запущен"
-            )
+            # await BotConfig.tele_ubot.send_message(
+            #     entity=my_chat,
+            #     message="Бот MinZKH запущен"
+            # )
             await BotConfig.tele_ubot.send_message(
                 entity=my_chat_2,
                 message="Бот MinZKH запущен 2"
