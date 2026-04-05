@@ -69,21 +69,21 @@ def main():
     )
 
 
-async def old_main():
-    BotConfig.scheduler.start()
-    await set_commands(bot=BotConfig.bot)
-    set_middleware(dp=BotConfig.dp)
-    set_routers(dp=BotConfig.dp)
-    await BotConfig.bot.delete_webhook(drop_pending_updates=True)
-    await BotConfig.dp.start_polling(BotConfig.bot)
-
-
-if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
-    try:
-        asyncio.run(old_main())
-    except Exception as e:
-        logging.exception(e)
+# async def old_main():
+#     BotConfig.scheduler.start()
+#     await set_commands(bot=BotConfig.bot)
+#     set_middleware(dp=BotConfig.dp)
+#     set_routers(dp=BotConfig.dp)
+#     await BotConfig.bot.delete_webhook(drop_pending_updates=True)
+#     await BotConfig.dp.start_polling(BotConfig.bot)
+#
+#
+# if __name__ == "__main__":
+#     logging.basicConfig(level=logging.INFO)
+#     try:
+#         asyncio.run(old_main())
+#     except Exception as e:
+#         logging.exception(e)
 
 #
 # async def main():
@@ -95,9 +95,9 @@ if __name__ == "__main__":
 #     asyncio.run(main())
 
 
-# if __name__ == "__main__":  Вот этот настоящий
-#     logging.basicConfig(level=logging.INFO, stream=sys.stdout)
-#     try:
-#         main()
-#     except Exception as err:
-#         error_logger(f'При запуске бота FillatovaChatBot ошибка: \n{repr(err)}')
+if __name__ == "__main__":  # Вот этот настоящий
+    logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+    try:
+        main()
+    except Exception as err:
+        error_logger(f'При запуске бота FillatovaChatBot ошибка: \n{repr(err)}')
