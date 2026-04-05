@@ -11,17 +11,17 @@ services:
       - ./src/logs:/src/logs
       - ./src/bot/logs:/src/bot/logs
 
-  redis_:
-    container_name: redis_
-    image: redis:8.0-alpine3.21
-    ports:
-      - "127.0.0.1:6379:6379"
-    networks:
-      nginx_net:
-    volumes:
-      - ./src/redis/redis.conf:/usr/local/etc/redis/redis.conf:ro
-      - redis_data:/data
-    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
+#  redis_:
+#    container_name: redis_
+#    image: redis:8.0-alpine3.21
+#    ports:
+#      - "127.0.0.1:6379:6379"
+#    networks:
+#      nginx_net:
+#    volumes:
+#      - ./src/redis/redis.conf:/usr/local/etc/redis/redis.conf:ro
+#      - redis_data:/data
+#    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
 
 
 
@@ -32,7 +32,7 @@ networks:
   nginx_net:
     name: nginx_net
     driver: bridge
-#    external: true
+    external: true
 #workbot  | Downloading ruff (10.7MiB)
 #workbot  |  Downloaded ruff
 #workbot  | Installed 1 package in 28ms
