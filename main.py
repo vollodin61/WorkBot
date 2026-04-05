@@ -44,7 +44,8 @@ async def on_startup(bot: Bot, dp: Dispatcher = BotConfig.dp) -> None:
         drop_pending_updates=True
     )
     info_logger(f"Вебхуки установлены на эндпоинт {BotConfig.webhook_url}")
-    await start_message()
+    # await start_message()
+    # info_logger("Сообщение отправлено?")
 
 
 def main():
