@@ -21,7 +21,7 @@ jobs:
             cd /home/My/WorkBot
             git pull
             docker compose down
-            docker compose up -d
+            docker compose up -d --build
 #            docker compose restart
 # todo разобраться с actions github, не работает. А ещё вывалилась ошибка какая-то при запуске контейнера
 # todo Написать хендлер для отлова сообщений в чат "отправка приглашений" или как я его там назвал
