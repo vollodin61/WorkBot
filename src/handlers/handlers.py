@@ -5,6 +5,7 @@ from aiogram.filters import Command, CommandStart, CommandObject
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
 from aiogram.utils.markdown import hlink
+from random import random, choice
 
 from src.config.conf import Emo, BotConfig
 from src.config.conf import debug_logger, error_logger, RedisConfig, info_logger
@@ -21,7 +22,10 @@ async def cmd_start_with_deeplink_handler(msg: Message, command: CommandObject, 
 async def cmd_start_handler(msg: Message):
     debug_logger("Сработал обычный команда старт!")
     if msg.chat.id == BotConfig.PS_CHAT_ID:
-        await msg.answer("Здравствуйте, Павел Сергеевич! 🤗")
+        text_for_PS_list = ["Здравствуйте, Павел Сергеевич! 🤗", "Приветствую, мой белый Господин 🙇‍♂️",
+                            "Опять работа? 👷"]
+        text_for_PS = choice(text_for_PS_list)
+        await msg.answer(text_for_PS)
     else:
         await msg.answer("Hello, my friend! 🤗")
 
