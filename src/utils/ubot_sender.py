@@ -21,6 +21,3 @@ async def get_contacts_from_list_by_ubot(contacts_list: list) -> list:
     contacts_list = list(map(int, contacts_list))
     contacts = [await get_contact_by_phone(i) for i in contacts_list]
     return contacts
-
-
-asyncio.run(get_contact_by_phone(89298152913))
