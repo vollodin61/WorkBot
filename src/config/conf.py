@@ -140,6 +140,7 @@ class BotConfig:
     MY_CHAT_ID: int = int(env("MY_CHAT_ID"))
     PS_CHAT_ID: int = int(env("PS_CHAT_ID"))
     INVITE_CHAT_ID: int = int(env("INVITE_CHAT_ID"))
+    WORK_BOT_CHAT_ID: int = int(env("WORK_BOT_CHAT_ID"))
 
 #
 # class MyStates(StatesGroup):  # todo
