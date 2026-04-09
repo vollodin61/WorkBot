@@ -2,7 +2,7 @@ from .antispam_middleware import Antispam
 from .scheduler_middleware import SchedulerMiddleware
 from .logging_middleware import LoggingMiddleware
 
-from src.config.conf import BotConfig
+from src.config.bot_config import BotConfig
 
 
 def set_middleware(dp):

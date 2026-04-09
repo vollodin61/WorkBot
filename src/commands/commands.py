@@ -2,10 +2,7 @@ from aiogram import Bot
 from aiogram.types import (
     BotCommand,
     BotCommandScopeAllPrivateChats,
-    BotCommandScopeChat,
 )
-
-from src.config.conf import BotConfig
 
 
 async def set_commands(bot: Bot):

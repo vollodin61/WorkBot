@@ -14,9 +14,11 @@
 
 FROM python:3.14.3-slim
 
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+# COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 WORKDIR /workbot
+
+RUN pip install uv --no-cache-dir
 
 ENV UV_COMPILE_BYTECODE=1
 ENV UV_LINK_MODE=copy
@@ -27,7 +29,7 @@ RUN uv sync --frozen --no-dev --no-install-project
 
 COPY . .
 
-RUN uv sync --frozen --no-dev
+RUN #uv sync --frozen --no-dev
 
-CMD ["uv", "run", "--no-dev", "main.py"]
+CMD ["uv", "run", "--no-dev", "python", "main.py"]
 #CMD ["python", "main.py"]

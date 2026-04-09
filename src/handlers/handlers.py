@@ -7,8 +7,10 @@ from aiogram.types import Message
 from aiogram.utils.markdown import hlink
 from random import random, choice
 
-from src.config.conf import Emo, BotConfig
-from src.config.conf import debug_logger, error_logger, RedisConfig, info_logger
+from src.config.bot_config import Emo, BotConfig
+from src.config.base_config import debug_logger, error_logger, info_logger
+from src.config.redis_config import RedisConfig
+
 
 router = Router()
 

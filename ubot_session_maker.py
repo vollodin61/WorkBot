@@ -1,6 +1,8 @@
 import asyncio
 
-from src.config.conf import BotConfig, info_logger, error_logger
+from src.config.base_config import info_logger, error_logger
+from src.config.bot_config import BotConfig
+
 
 info_logger("ffпытаюсь отправить сообщение")
 

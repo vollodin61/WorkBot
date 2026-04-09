@@ -9,9 +9,11 @@ from aiohttp import web
 from telethon.tl.types import PeerChat
 
 from src.commands.commands import set_commands
+from src.config.bot_config import BotConfig
 from src.handlers.setter_handlers import set_routers
 from src.middlewares.set_middlewares import set_middleware
-from src.config.conf import error_logger, info_logger, BotConfig  # todo странно, что тут подчеркивает BotConfig
+from src.config.base_config import error_logger, info_logger
+
 
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 

@@ -1,9 +1,9 @@
 import asyncio
 
 from telethon import client, events
-from src.config.conf import info_logger
 
-from src.config.conf import BotConfig
+from src.config.bot_config import BotConfig
+
 
 #
 # @client.on(events.NewMessage(chats=BotConfig.work_bot_chat_id))
@@ -11,7 +11,7 @@ from src.config.conf import BotConfig
 #     await event.reply("Получил контакты")
 
 
-async def get_contact_by_phone(phone_number: str) -> dict:
+async def get_contact_by_phone(phone_number: int) -> dict:
     async with BotConfig.tele_ubot:
         tg_contact = BotConfig.tele_ubot.get_entity(phone_number)
     return tg_contact
@@ -19,5 +19,5 @@ async def get_contact_by_phone(phone_number: str) -> dict:
 
 async def get_contacts_from_list_by_ubot(contacts_list: list) -> list:
     contacts_list = list(map(int, contacts_list))
-    contacts = [await get_contact_by_phone(i) for i in contacts_list]
+    contacts = [await get_contact_by_phone(contact) for contact in contacts_list]
     return contacts

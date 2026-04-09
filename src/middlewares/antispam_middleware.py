@@ -7,8 +7,8 @@ from aiogram.fsm.storage.redis import RedisStorage
 from aiogram.types import Message
 from aiogram.types.base import TelegramObject
 
-from src.config.conf import BotConfig
-from src.config.conf import debug_logger
+from src.config.base_config import debug_logger
+from src.config.bot_config import BotConfig
 
 
 class Antispam(BaseMiddleware):
